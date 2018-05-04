@@ -6,7 +6,7 @@ import Searchbar from '../components/Searchbar';
 const App = () => {
   return (
     <React.Fragment>
-      <Navbar />{' '}
+      <Navbar />
       <div className="container">
         <Searchbar />
       </div>
