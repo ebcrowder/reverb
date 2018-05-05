@@ -5,6 +5,8 @@ import _ from 'lodash';
 import Navbar from '../components/Navbar';
 import Searchbar from '../components/Searchbar';
 
+import DISCOGS_TOKEN from '../config/keys';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -20,11 +22,10 @@ export default class App extends Component {
     axios
       .get(`https://api.discogs.com/database/search?q=${term}`, {
         headers: {
-          Authorization:
-            'Discogs token=clPIVQsErYhHxjjxlqJfcrWYYnIYDOMZOGdkAnsE'
+          Authorization: `Discogs token=${DISCOGS_TOKEN}`
         }
       })
-      .then(albums => this.setState({ albums: albums }));
+      .then(albums => this.setState({ albums }));
   }
 
   render() {
