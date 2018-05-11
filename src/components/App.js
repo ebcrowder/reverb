@@ -4,6 +4,7 @@ import _ from 'lodash';
 
 import Navbar from '../components/Navbar';
 import Searchbar from '../components/Searchbar';
+import Albums from '../components/Albums';
 
 import DISCOGS_TOKEN from '../config/keys';
 
@@ -39,6 +40,7 @@ export default class App extends Component {
         <div className="container">
           <Searchbar onSearchTermChange={albumSearch} />
         </div>
+        <Albums albums={this.state.albums} />
       </React.Fragment>
     );
   }
