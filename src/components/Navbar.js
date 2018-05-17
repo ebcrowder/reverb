@@ -3,11 +3,11 @@ import React from 'react';
 const Navbar = () => {
   return (
     <React.Fragment>
-      <nav className="navbar navbar-dark bg-dark">
+      <div className="navbar">
         <a className="navbar-brand" href="http://discogs.com">
           Reverb
         </a>
-      </nav>
+      </div>
     </React.Fragment>
   );
 };

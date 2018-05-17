@@ -16,7 +16,7 @@ export default class App extends Component {
       albums: []
     };
 
-    this.albumSearch('nirvana');
+    this.albumSearch('fugazi');
   }
 
   albumSearch(term) {
@@ -24,6 +24,9 @@ export default class App extends Component {
       .get(`https://api.discogs.com/database/search?q=${term}`, {
         headers: {
           Authorization: `Discogs token=${DISCOGS_TOKEN}`
+        },
+        params: {
+          per_page: 100
         }
       })
       .then(albums => this.setState({ albums: albums.data.results }));
