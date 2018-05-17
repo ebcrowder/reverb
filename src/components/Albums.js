@@ -9,6 +9,12 @@ const Albums = albums => {
           <p>{records.type}</p>
           <p>{records.title}</p>
         </div>
+      ) : records.type === 'master' ? (
+        <div key={records.id}>
+          <img src={records.cover_image} alt={records.type} />
+          <p>{records.type}</p>
+          <p>{records.title}</p>
+        </div>
       ) : null
   );
 };
