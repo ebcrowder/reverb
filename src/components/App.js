@@ -26,7 +26,7 @@ export default class App extends Component {
           Authorization: `Discogs token=${DISCOGS_TOKEN}`
         }
       })
-      .then(albums => this.setState({ albums }));
+      .then(albums => this.setState({ albums: albums.data.results }));
   }
 
   render() {
