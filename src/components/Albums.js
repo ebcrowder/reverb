@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/Albums.css';
 
 const Albums = albums => {
   return albums.albums.map(

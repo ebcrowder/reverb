@@ -21,8 +21,6 @@ export default class App extends Component {
   }
 
   albumSearch(term) {
-    const results = [];
-
     axios
       .get(`https://api.discogs.com/database/search?q=${term}`, {
         headers: {
@@ -32,28 +30,31 @@ export default class App extends Component {
           per_page: 100
         }
       })
-      .then(albums => results.push(albums))
-      .then(albums => {
-        while (albums.data.pagination.urls.next) {
-          axios
-            .get(albums.data.pagination.urls.next, {
-              headers: {
-                Authorization: `Discogs token=${DISCOGS_TOKEN}`
-              },
-              params: {
-                per_page: 100
-              }
-            })
-            .then(albums =>
-              this.setState({
-                albums: albums.data.results,
-                pagination: albums.data.pagination
-              })
-            );
-        }
-      });
-
-    console.log(results);
+      .then(albums =>
+        this.setState({
+          albums: albums.data.results,
+          pagination: albums.data.pagination
+        })
+      );
+    // .then(albums => {
+    //   while (this.state.pagination.urls.next) {
+    //     axios
+    //       .get(this.state.pagination.urls.next, {
+    //         headers: {
+    //           Authorization: `Discogs token=${DISCOGS_TOKEN}`
+    //         },
+    //         params: {
+    //           per_page: 100
+    //         }
+    //       })
+    //       .then(albums =>
+    //         this.setState({
+    //           albums: albums.data.results,
+    //           pagination: albums.data.pagination
+    //         })
+    //       );
+    //   }
+    // });
   }
 
   render() {
