@@ -2,6 +2,8 @@
 
 Single page application for searching the Discogs database for albums by artist.
 
+![alt text](/reverb.jpg?raw=true 'reverb')
+
 ## Deployment
 
 in progress!
