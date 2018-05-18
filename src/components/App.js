@@ -43,7 +43,9 @@ export default class App extends Component {
         <div className="container">
           <Searchbar onSearchTermChange={albumSearch} />
         </div>
-        <Albums albums={this.state.albums} />
+        <div className="albums">
+          <Albums albums={this.state.albums} />
+        </div>
       </React.Fragment>
     );
   }
