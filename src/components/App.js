@@ -36,25 +36,6 @@ export default class App extends Component {
           pagination: albums.data.pagination
         })
       );
-    // .then(albums => {
-    //   while (this.state.pagination.urls.next) {
-    //     axios
-    //       .get(this.state.pagination.urls.next, {
-    //         headers: {
-    //           Authorization: `Discogs token=${DISCOGS_TOKEN}`
-    //         },
-    //         params: {
-    //           per_page: 100
-    //         }
-    //       })
-    //       .then(albums =>
-    //         this.setState({
-    //           albums: albums.data.results,
-    //           pagination: albums.data.pagination
-    //         })
-    //       );
-    //   }
-    // });
   }
 
   render() {
