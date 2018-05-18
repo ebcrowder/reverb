@@ -5,7 +5,7 @@ const Navbar = () => {
     <React.Fragment>
       <div className="navbar">
         <a className="navbar-brand" href="http://discogs.com">
-          Reverb
+          reverb
         </a>
       </div>
     </React.Fragment>
