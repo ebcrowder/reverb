@@ -10,7 +10,7 @@ in progress!
 
 ## Built With
 
-* [React](https://reactjs.org/) - Javascript library for front-end development
+* [React](https://reactjs.org/)
 * CSS Grid for layout and styling of components
 
 ## Acknowledgments
