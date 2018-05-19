@@ -17,12 +17,15 @@ export default class App extends Component {
       pagination: []
     };
 
+    this.allResults = [];
     this.albumSearch('father john misty');
   }
 
-  albumSearch(term) {
+  albumSearch(term , nextUrl) {
+    let searchUrl = nextUrl || `https://api.discogs.com/database/search?q=${term}`;
+
     axios
-      .get(`https://api.discogs.com/database/search?q=${term}`, {
+      .get(searchUrl, {
         headers: {
           Authorization: `Discogs token=${DISCOGS_TOKEN}`
         },
@@ -30,12 +33,18 @@ export default class App extends Component {
           per_page: 100
         }
       })
-      .then(albums =>
-        this.setState({
-          albums: albums.data.results,
-          pagination: albums.data.pagination
-        })
-      );
+      .then(albums => {
+        this.allResults = this.allResults.concat(albums.data.results);
+
+        if(albums.data.pagination.urls.next) {
+          this.albumSearch(term, albums.data.pagination.urls.next);
+        } else {
+          this.setState({
+            albums: this.allResults,
+            pagination: albums.data.pagination
+          });
+        }
+      });
   }
 
   render() {
