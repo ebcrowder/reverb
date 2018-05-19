@@ -21,8 +21,9 @@ export default class App extends Component {
     this.albumSearch('father john misty');
   }
 
-  albumSearch(term , nextUrl) {
-    let searchUrl = nextUrl || `https://api.discogs.com/database/search?q=${term}`;
+  albumSearch(term, nextUrl) {
+    let searchUrl =
+      nextUrl || `https://api.discogs.com/database/search?q=${term}`;
 
     axios
       .get(searchUrl, {
@@ -36,7 +37,7 @@ export default class App extends Component {
       .then(albums => {
         this.allResults = this.allResults.concat(albums.data.results);
 
-        if(albums.data.pagination.urls.next) {
+        if (albums.data.pagination.urls.next) {
           this.albumSearch(term, albums.data.pagination.urls.next);
         } else {
           this.setState({
@@ -50,7 +51,7 @@ export default class App extends Component {
   render() {
     const albumSearch = _.debounce(term => {
       this.albumSearch(term);
-    }, 300);
+    }, 5000);
 
     return (
       <React.Fragment>
