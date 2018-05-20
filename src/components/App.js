@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 import Searchbar from '../components/Searchbar';
 import Albums from '../components/Albums';
 
-import DISCOGS_TOKEN from '../config/keys';
+import keys from '../config/keys';
 
 export default class App extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ export default class App extends Component {
     axios
       .get(searchUrl, {
         headers: {
-          Authorization: `Discogs token=${DISCOGS_TOKEN}`
+          Authorization: `Discogs token=${keys}`
         },
         params: {
           per_page: 100
