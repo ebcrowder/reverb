@@ -18,7 +18,7 @@ export default class App extends Component {
     };
 
     this.allResults = [];
-    this.albumSearch('');
+    this.albumSearch('father john misty');
   }
 
   albumSearch(term, nextUrl) {
