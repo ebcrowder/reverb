@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "8.11.2",
+    "node": "10.1.0",
     "npm": "5.6.0"
   },
   "dependencies": {
@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
+    "heroku-postbuild":
+      "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^16.1.0",
