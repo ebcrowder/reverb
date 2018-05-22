@@ -18,7 +18,7 @@ export default class App extends Component {
     };
 
     this.allResults = [];
-    this.albumSearch('father john misty');
+    this.albumSearch('');
   }
 
   albumSearch(term, nextUrl) {
@@ -37,14 +37,14 @@ export default class App extends Component {
       .then(albums => {
         this.allResults = this.allResults.concat(albums.data.results);
 
-        if (albums.data.pagination.urls.next) {
-          this.albumSearch(term, albums.data.pagination.urls.next);
-        } else {
-          this.setState({
-            albums: this.allResults,
-            pagination: albums.data.pagination
-          });
-        }
+        // if (albums.data.pagination.urls.next) {
+        //   this.albumSearch(term, albums.data.pagination.urls.next);
+        // } else {
+        this.setState({
+          albums: this.allResults,
+          pagination: albums.data.pagination
+        });
+        //  }
       });
   }
 

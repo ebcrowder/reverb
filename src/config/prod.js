@@ -1,5 +1,5 @@
 // prod.js - production keys here!!
 
-const DISCOGS_TOKEN = process.env.DISCOGS_TOKEN;
+const prodKey = process.env.DISCOGS_TOKEN;
 
-export default DISCOGS_TOKEN;
+export default prodKey;
