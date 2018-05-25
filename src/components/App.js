@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 import Searchbar from '../components/Searchbar';
 import Albums from '../components/Albums';
 
-import keys from '../config/keys';
+const keys = require('../config/keys');
 
 export default class App extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ export default class App extends Component {
     };
 
     this.allResults = [];
-    this.albumSearch('');
+    this.albumSearch('father john misty');
   }
 
   albumSearch(term, nextUrl) {
@@ -28,7 +28,7 @@ export default class App extends Component {
     axios
       .get(searchUrl, {
         headers: {
-          Authorization: `Discogs token=${keys}`
+          Authorization: `Discogs token=${[keys.devKey]}`
         },
         params: {
           per_page: 100
