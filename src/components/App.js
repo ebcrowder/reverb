@@ -28,7 +28,7 @@ export default class App extends Component {
     axios
       .get(searchUrl, {
         headers: {
-          Authorization: `Discogs token=${[keys.devKey]}`
+          Authorization: `Discogs token=${[keys.DISCOGS_TOKEN]}`
         },
         params: {
           per_page: 100
