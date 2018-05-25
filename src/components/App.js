@@ -16,7 +16,7 @@ export default class App extends Component {
     };
 
     this.allResults = [];
-    this.albumSearch('father john misty');
+    this.albumSearch('');
   }
 
   albumSearch(term, nextUrl) {
@@ -44,7 +44,6 @@ export default class App extends Component {
         });
         //  }
       });
-    console.log(process.env.REACT_APP_DISCOGS_TOKEN);
   }
 
   render() {
