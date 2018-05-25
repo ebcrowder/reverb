@@ -6,7 +6,7 @@ Single page application for searching the Discogs database for albums by artist.
 
 ## Deployment
 
-in progress!
+https://sheltered-beyond-71050.herokuapp.com/
 
 ## Built With
 
