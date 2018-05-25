@@ -19,9 +19,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild":
-      "NPM_CONFIG_PRODUCTION=true npm install && npm run build"
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^16.1.0",
