@@ -14,14 +14,10 @@ export default class App extends Component {
       albums: [],
       pagination: []
     };
-
-    this.allResults = [];
-    this.albumSearch('');
   }
 
-  albumSearch(term, nextUrl) {
-    let searchUrl =
-      nextUrl || `https://api.discogs.com/database/search?q=${term}`;
+  albumSearch(term) {
+    let searchUrl = `https://api.discogs.com/database/search?q=${term}`;
 
     axios
       .get(searchUrl, {
@@ -33,23 +29,17 @@ export default class App extends Component {
         }
       })
       .then(albums => {
-        this.allResults = this.allResults.concat(albums.data.results);
-
-        // if (albums.data.pagination.urls.next) {
-        //   this.albumSearch(term, albums.data.pagination.urls.next);
-        // } else {
         this.setState({
-          albums: this.allResults,
+          albums: albums.data.results,
           pagination: albums.data.pagination
         });
-        //  }
       });
   }
 
   render() {
     const albumSearch = _.debounce(term => {
       this.albumSearch(term);
-    }, 5000);
+    }, 500);
 
     return (
       <React.Fragment>
